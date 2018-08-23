@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
+import { ModalService } from './modal/modal.service'
+import { ModalContentComponent } from './modal-content/modal-content.component'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  constructor(private modalService: ModalService) {}
+
+  openModal(): void {
+    this.modalService.openModal(ModalContentComponent, { text: 'custom text' })
+  }
 }

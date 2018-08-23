@@ -1,0 +1,10 @@
+<div [hidden]="!displayModal">
+  <div (click)="closeModal()"
+       class="overlay"></div>
+  <div class="modal-wrapper">
+    <div class="modal-container">
+      <ng-container #modalContainer></ng-container>
+      <button (click)="closeModal()">close modal</button>
+    </div>
+  </div>
+</div>
